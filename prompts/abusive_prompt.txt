@@ -1,0 +1,17 @@
+Determine whether text contains:
+
+Abusive language
+Hate speech
+Threats
+Illegal activity
+Harassment
+
+Return JSON only.
+
+{
+"abusive": true/false,
+"reason": "..."
+}
+
+Text:
+{text}

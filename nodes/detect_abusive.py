@@ -1,0 +1,47 @@
+from graph.state import ComplianceState
+from services.abusive_service import detect_abusive_text
+
+
+def detect_abusive_node(state: ComplianceState) -> ComplianceState:
+    results_by_page = {
+        page["page"]: {
+            "page": page["page"],
+            "violation": False,
+            "type": "Abusive",
+            "reason": "",
+            "reasons": [],
+        }
+        for page in state.get("pages", [])
+    }
+
+    chunks = state.get("chunks") or [
+        {"page": page["page"], "chunk": 1, "text": page["text"]} for page in state.get("pages", [])
+    ]
+
+    analyses = detect_abusive_text([chunk["text"] for chunk in chunks])
+
+    for chunk, analysis in zip(chunks, analyses):
+        page_result = results_by_page.setdefault(
+            chunk["page"],
+            {
+                "page": chunk["page"],
+                "violation": False,
+                "type": "Abusive",
+                "reason": "",
+                "reasons": [],
+            },
+        )
+        page_result["violation"] = page_result["violation"] or bool(analysis.get("abusive", False))
+
+        reason = str(analysis.get("reason", "")).strip()
+        if reason:
+            page_result["reasons"].append(f"Chunk {chunk['chunk']}: {reason}")
+
+    results = []
+    for page_number in sorted(results_by_page):
+        page_result = results_by_page[page_number]
+        reasons = page_result.pop("reasons")
+        page_result["reason"] = " ".join(reasons)
+        results.append(page_result)
+
+    return {**state, "abusive_results": results}

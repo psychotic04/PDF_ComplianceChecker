@@ -1,0 +1,8 @@
+.env
+.venv/
+.model_cache/
+__pycache__/
+*.pyc
+database/*.db
+reports/*.pdf
+uploads/*.pdf

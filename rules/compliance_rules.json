@@ -1,0 +1,18 @@
+[
+  {
+    "rule_name": "PII Detection",
+    "rule_description": "Detect email IDs, phone numbers, Aadhaar numbers, PAN numbers, and credit card numbers using regex."
+  },
+  {
+    "rule_name": "Confidential Information",
+    "rule_description": "Detect proprietary information, internal company strategy, trade secrets, intellectual property, and confidential project information using Gemini."
+  },
+  {
+    "rule_name": "UTF-8 and English Validation",
+    "rule_description": "Flag unsupported symbols, corrupted encoding, and non-English content."
+  },
+  {
+    "rule_name": "Abusive or Unlawful Content",
+    "rule_description": "Detect abusive language, hate speech, threats, illegal activity, and harassment using Gemini."
+  }
+]

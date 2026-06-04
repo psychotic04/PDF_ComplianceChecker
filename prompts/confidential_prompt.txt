@@ -1,0 +1,19 @@
+Analyze the following text.
+
+Determine whether it contains:
+
+Proprietary information
+Internal company strategy
+Trade secrets
+Intellectual property
+Confidential project information
+
+Return only JSON.
+
+{
+"confidential": true/false,
+"reason": "..."
+}
+
+Text:
+{text}
