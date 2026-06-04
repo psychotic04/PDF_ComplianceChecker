@@ -57,14 +57,23 @@ for text-based PDFs. Scanned image PDFs require OCR before analysis.
 - Compliance rules are editable in SQLite from the UI. The JSON file seeds the database on first run.
 <img width="1026" height="581" alt="Screenshot 2026-06-04 at 4 00 53 PM" src="https://github.com/user-attachments/assets/ea5b27c0-da08-44e4-831f-d4015170af42" />
 
-<img width="1023" height="583" alt="image" src="https://github.com/user-attachments/assets/dddd7836-7dee-4f09-b8c2-a2c5bfb90c8c" />
+<h2>System Architecture</h2>
 
-<img width="928" height="576" alt="image" src="https://github.com/user-attachments/assets/9072f7fe-5d4a-4b51-a8ab-b3a146bdffcd" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dddd7836-7dee-4f09-b8c2-a2c5bfb90c8c" width="900">
+</p>
 
-<img width="916" height="557" alt="image" src="https://github.com/user-attachments/assets/8a78751a-3b6f-4062-91f0-eb39ef3c984b" />
+<h2>Recursive Chunking Strategy</h2>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9072f7fe-5d4a-4b51-a8ab-b3a146bdffcd" width="900">
+</p>
 
+<h2>Parallel Processing Workflow</h2>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8a78751a-3b6f-4062-91f0-eb39ef3c984b" width="900">
+</p>
 
 
 
