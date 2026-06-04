@@ -53,74 +53,18 @@ pdf-compliance-scanner/
 ├── scripts/
 │   └── generate_sample_pdf.py
 └── requirements.txt
-```
-
-## Setup
-
-1. Create and activate a virtual environment.
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-2. Install dependencies.
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Configure Gemini.
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` and set:
-
-```text
-GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-2.5-flash
-```
-
-4. Generate the demo PDF.
-
-```bash
-python scripts/generate_sample_pdf.py
-```
-
-5. Run the application.
-
-```bash
-streamlit run app.py
-```
-
-## Workflow
-
-```text
-START
-  |
-Extract PDF
-  |
-PII Detection
-  |
-Confidential Detection
-  |
-Encoding Validation
-  |
-Abusive Content Detection
-  |
-Generate Report
-  |
-END
-```
-
-## Database
-
-The application initializes SQLite automatically at `database/compliance.db`. The SQL schema is also available in `database/schema.sql`.
-
-## Notes
-
-- Gemini confidential checks return a safe fallback when `GEMINI_API_KEY` is not configured, so the app remains runnable for UI, PII, encoding, and Detoxify demos.
-- This scanner is designed for text-based PDFs. Scanned image PDFs require OCR before analysis.
+for text-based PDFs. Scanned image PDFs require OCR before analysis.
 - Compliance rules are editable in SQLite from the UI. The JSON file seeds the database on first run.
+<img width="1026" height="581" alt="Screenshot 2026-06-04 at 4 00 53 PM" src="https://github.com/user-attachments/assets/ea5b27c0-da08-44e4-831f-d4015170af42" />
+
+<img width="1023" height="583" alt="image" src="https://github.com/user-attachments/assets/dddd7836-7dee-4f09-b8c2-a2c5bfb90c8c" />
+
+<img width="928" height="576" alt="image" src="https://github.com/user-attachments/assets/9072f7fe-5d4a-4b51-a8ab-b3a146bdffcd" />
+
+<img width="916" height="557" alt="image" src="https://github.com/user-attachments/assets/8a78751a-3b6f-4062-91f0-eb39ef3c984b" />
+
+
+
+
+
+
